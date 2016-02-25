@@ -14,10 +14,7 @@ class TestMetrics(BaseTestCase):
         self.get(name='metrics')
 
         # She sees a metric for total number of articles.
-        self.assertIn('Total articles: 12', self.get_text())
-
-        # She confirms provided value is correct.
-        self.fail()
+        self.assertIn('Total articles: 10', self.get_text())
 
     def test_can_see_multiple_single_value_metrics(self):
         # articles total count, avg articles per day

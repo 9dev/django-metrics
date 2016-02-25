@@ -1,13 +1,105 @@
 [
-	{
-		"model": "auth.user",
-		"pk": 1,
-		"fields": {
-			"username": "admin",
-			"password": "pbkdf2_sha256$12000$NDBMzLyJdeEZ$Zv9oQaVL8dq0xVN1dTpG6msSgIhy73PGEE1HzchJNe8=", 
-			"is_active": true, 
-			"is_superuser": true, 
-			"is_staff": true
-		}
-	}
+  {
+  "model": "auth.user",
+  "pk": 1,
+  "fields":
+    {
+      "username": "admin",
+      "password": "pbkdf2_sha256$12000$NDBMzLyJdeEZ$Zv9oQaVL8dq0xVN1dTpG6msSgIhy73PGEE1HzchJNe8=",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true
+    }
+  },
+
+  {
+    "model": "main.article",
+    "pk": 1,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2013-03-18T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 2,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-02-18T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 3,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-02-11T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 4,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-01-11T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 5,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-01-11T13:10:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 6,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-02-18T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 7,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-03-10T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 8,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-03-01T13:19:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 9,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-02-18T13:18:37+00:00"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 10,
+    "fields":
+    {
+      "title": "Lorem ipsum",
+      "created": "2016-02-20T13:19:37+00:00"
+    }
+  }
 ]
