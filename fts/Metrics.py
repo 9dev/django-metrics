@@ -3,9 +3,16 @@ from ._base import BaseTestCase
 
 class TestMetrics(BaseTestCase):
 
-    def test_can_see_single_value_metric(self):
+    def setUp(self):
+        super(TestMetrics, self).setUp()
+
         # Harriet logs in as an admin.
-        # She hits metrics dashboard.
+        self.login_as_admin()
+
+    def test_can_see_single_value_metric(self):
+        # Harriet hits metrics dashboard.
+        self.get(name='metrics')
+
         # She sees a metric for total number of articles.
         # She confirms provided value is correct.
         pass

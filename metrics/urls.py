@@ -1,5 +1,7 @@
 from django.conf.urls import patterns, url
 
+from .views import metrics
+
 urlpatterns = patterns('',               
-    # url(r'^$', someview, name='someview'),
+    url(r'^$', metrics, name='metrics'),
 )
