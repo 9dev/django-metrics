@@ -30,6 +30,9 @@ class BaseTestCase(StaticLiveServerTestCase):
     def get_by_id(self, id_):
         return self.browser.find_element_by_id(id_)
 
+    def get_text(self):
+        return self.browser.find_element_by_tag_name('body').text
+
     def set_field(self, field_id, value):
         field = self.get_by_id(field_id)
         field.clear()
