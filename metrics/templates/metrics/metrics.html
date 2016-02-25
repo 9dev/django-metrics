@@ -1,0 +1,4 @@
+
+{% for metric in value_metrics %}
+    {{ metric.get_name }}: {{ metric.get_value }}<br>
+{% endfor %}

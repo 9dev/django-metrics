@@ -14,16 +14,18 @@ class TestMetrics(BaseTestCase):
         self.get(name='metrics')
 
         # She sees a metric for total number of articles.
+        self.assertIn('Total articles: 12', self.get_text())
+
         # She confirms provided value is correct.
-        pass
+        self.fail()
 
     def test_can_see_multiple_single_value_metrics(self):
         # articles total count, avg articles per day
-        pass
+        self.fail()
 
     def test_can_see_line_chart_metric(self):
-        pass
+        self.fail()
 
     def test_can_see_multiple_line_chart_metrics(self):
         # new signups, new articles, active users
-        pass
+        self.fail()
