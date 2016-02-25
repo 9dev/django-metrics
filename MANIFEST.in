@@ -1,0 +1,11 @@
+include LICENSE
+include README.md
+recursive-include metrics/static *
+recursive-include metrics/templates *
+recursive-include metrics/templatetags *
+recursive-include metrics/management *
+recursive-include metrics/fixtures *
+recursive-include metrics/resources *
+recursive-include metrics/migrations *
+global-exclude *pyc
+global-exclude ~*
