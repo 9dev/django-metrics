@@ -18,11 +18,11 @@ def install():
 
         _django_local('makemigrations')
         _django_local('migrate')
+        _django_local('loaddata base.json')
 
 
 def runserver():
     with _venv_local():
-        _django_local('loaddata base.json')
         _django_local('runserver')
 
 
