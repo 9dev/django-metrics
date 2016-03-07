@@ -8,18 +8,19 @@ Django app providing simple metrics dashboard.
 - Add `"metrics"` to your `INSTALLED_APPS`.
 - Update your `urls.py`:
 
-
+    ```
     from metrics import urls as metrics_urls
 
     urlpatterns = [
         ...
         url(r'^metrics/', include(metrics_urls)),
     ]
+    ```
 
 - Create `metrics.py` file and add `METRICS_MODULE` to your `settings.py`. Example:
 
 
-    METRICS_MODULE = 'myapp.metrics'
+    `METRICS_MODULE = 'myapp.metrics'`
 
 ## Usage
 
