@@ -1,51 +1,63 @@
-<html><body>
+{% extends "metrics/base.html" %}
 
-{% for metric in value_metrics %}
-    {{ metric.get_name }}: {{ metric.get_value }}<br>
-{% endfor %}
+{% block content %}
+    {% for metric in value_metrics %}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ metric.get_name }}</h3>
+            </div>
+            <div class="panel-body">
+                {{ metric.get_value }}
+            </div>
+        </div>
+    {% endfor %}
 
-{% if linechart_metrics %}
-    <div id="id_charts">
-        {% for metric in linechart_metrics %}
-            <div id="id_{{ metric.get_name|slugify }}"></div>
-        {% endfor %}
-    </div>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <script>
-        google.charts.load('current', {packages: ['corechart', 'line']});
-        google.charts.setOnLoadCallback(drawCharts);
-
-        function drawCharts()
-        {
+    {% if linechart_metrics %}
+        <div id="id_charts">
             {% for metric in linechart_metrics %}
-
-                var data{{ forloop.counter }} = new google.visualization.DataTable();
-                data{{ forloop.counter }}.addColumn('number', 'X');
-                data{{ forloop.counter }}.addColumn('number', '{{ metric.get_name|escapejs }}');
-
-                data{{ forloop.counter }}.addRows([
-                    {{ metric.get_points|join:"," }}
-                ]);
-
-                var options{{ forloop.counter }} = {
-                    hAxis: {
-                        title: '{{ metric.xlabel|escapejs }}'
-                    },
-                    vAxis: {
-                        title: '{{ metric.ylabel|escapejs }}'
-                    }
-                };
-
-                var chart{{ forloop.counter }} = new google.visualization.LineChart(
-                    document.getElementById('id_{{ metric.get_name|slugify }}')
-                );
-
-                chart{{ forloop.counter }}.draw(data{{ forloop.counter }}, options{{ forloop.counter }});
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ metric.get_name }}</h3>
+                    </div>
+                    <div class="panel-body" id="id_{{ metric.get_name|slugify }}"></div>
+                </div>
             {% endfor %}
-        }
-    </script>
-{% endif %}
+        </div>
 
-</body></html>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script>
+            google.charts.load('current', {packages: ['corechart', 'line']});
+            google.charts.setOnLoadCallback(drawCharts);
+
+            function drawCharts()
+            {
+                {% for metric in linechart_metrics %}
+
+                    var data{{ forloop.counter }} = new google.visualization.DataTable();
+                    data{{ forloop.counter }}.addColumn('number', 'X');
+                    data{{ forloop.counter }}.addColumn('number', '{{ metric.get_name|escapejs }}');
+
+                    data{{ forloop.counter }}.addRows([
+                        {{ metric.get_points|join:"," }}
+                    ]);
+
+                    var options{{ forloop.counter }} = {
+                        hAxis: {
+                            title: '{{ metric.xlabel|escapejs }}'
+                        },
+                        vAxis: {
+                            title: '{{ metric.ylabel|escapejs }}'
+                        }
+                    };
+
+                    var chart{{ forloop.counter }} = new google.visualization.LineChart(
+                        document.getElementById('id_{{ metric.get_name|slugify }}')
+                    );
+
+                    chart{{ forloop.counter }}.draw(data{{ forloop.counter }}, options{{ forloop.counter }});
+                {% endfor %}
+            }
+        </script>
+    {% endif %}
+{% endblock content %}
