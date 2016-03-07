@@ -2,6 +2,7 @@ import importlib
 from inspect import isclass
 
 from django.conf import settings
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render
 
 from .metrics import LineChartMetric, ValueMetric
@@ -22,6 +23,7 @@ for name, attr in metrics.__dict__.items():
             linechart_metrics.append(attr())
 
 
+@staff_member_required
 def metrics(request):
     context = {
         'value_metrics': value_metrics,
