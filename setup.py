@@ -14,9 +14,9 @@ setup(
     packages=['metrics'],
     include_package_data=True,
     license='MIT License',
-    description='...',
+    description='Django app providing simple metrics dashboard',
     long_description=README,
-    url='...',
+    url='https://github.com/9dev/django-metrics',
     author='9dev',
     author_email='9devmail@gmail.com',
     classifiers=[
