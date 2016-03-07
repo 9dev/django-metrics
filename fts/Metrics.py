@@ -44,5 +44,8 @@ class TestMetrics(BaseTestCase):
         self.assertIn(expected_rows, self.browser.page_source)
 
         # She sees correct labels.
+        self.assertIn('Day', self.browser.page_source)
+        self.assertIn('Sign-ups', self.browser.page_source)
+
         # new signups, new articles, active users
         self.fail()

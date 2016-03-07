@@ -29,6 +29,8 @@ class TotalArticlesMetric(ValueMetric):
 
 class NewSignupsMetric(LineChartMetric):
     name = 'new sign-ups'
+    xlabel = 'Day'
+    ylabel = 'Sign-ups'
 
     def get_values(self):
         values = []
