@@ -32,10 +32,10 @@ class TestMetrics(BaseTestCase):
         self.get(name='metrics')
 
         # She sees a metric for total number of articles.
-        self.assertIn('total articles: 3', self.get_text())
+        self.assertIn('total articles 3', self.get_text().replace('\n', ' '))
 
         # She sees a metric for average number of articles.
-        self.assertIn('articles/year:', self.get_text())
+        self.assertIn('articles/year', self.get_text())
 
     def test_can_see_line_chart_metrics(self):
         # Harriet logs in as an admin.
